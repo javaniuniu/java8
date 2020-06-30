@@ -21,16 +21,38 @@ public class SumMap {
         map2.put("m3",3);
     }
 
+    // stream + merge 简化板
+    @Test
+    public void sumMap6() {
+        // 合并到map中 表示如果出现同样的key map2中的数据覆盖map中的数据
+        // oldValue      在这里指的是 map1
+        // newValue      在这里指的是 map2
+        // value = newValue 即指的是  map2
+        map2.forEach((key,value)->map1.merge(key,value,((oldValue,newValue)->(newValue>oldValue?newValue:oldValue))));
+        System.out.println(map1);
+    }
+
     // stream + merge
     @Test
     public void sumMap3() {
         map.putAll(map1);
-        // 遍历map2中的值entry，和map中的值比较
+        // 遍历map2中的值entry，和map中的值比较 合并到map中
+        // 合并到map2中 表示如果出现同样的key map1中的数据覆盖map2中的数据
+        // v1 =  oldValue 在这里指的是 map2
+        // v2 =  newValue 在这里指的是 map1
+        // value = newValue 即指的是   map1
         map2.entrySet().stream().forEach(entry->{
             map.merge(entry.getKey(),entry.getValue(),((oldValue,newValue)->(newValue>oldValue?newValue:oldValue)));
         });
-        System.out.println(map);
 
+
+        // 简化版
+        // 合并到map中 表示如果出现同样的key map2中的数据覆盖map中的数据
+        // oldValue      在这里指的是 map
+        // newValue      在这里指的是 map2
+        // value = newValue 即指的是  map2
+        map2.forEach((key,value)->map.merge(key,value,((oldValue,newValue)->(newValue>oldValue?newValue:oldValue))));
+        System.out.println(map);
     }
 
     @Test

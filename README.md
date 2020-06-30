@@ -39,14 +39,15 @@
 
 ##### 4.1 Map 相关示例
 
-| 示例链接                                                     | 使用方法        | 说明 |
-| ------------------------------------------------------------ | --------------- | ---- |
-| [stream 流遍历 List分组Map](./src/main/java/com/javaniuniu/stream/FooTest.java) | stream          |      |
-| [stream 流遍历 List分组Map](./src/main/java/com/javaniuniu/stream/MapGroupBy.java) | stream          |      |
-| [合并map](./src/main/java/com/javaniuniu/map/SumMap.java)    | stream, merge   |      |
-| [StudentScoreTest](./src/main/java/com/javaniuniu/map/StudentScoreTest.java) | stream ,  merge |      |
-| [Merge示例](./src/main/java/com/javaniuniu/map/MergeDemo.java) | merge           |      |
-|                                                              |                 |      |
+| 示例链接                                                     | 使用方法         | 说明          |
+| ------------------------------------------------------------ | ---------------- | ------------- |
+| [stream 流遍历 List分组Map](./src/main/java/com/javaniuniu/stream/FooTest.java) | stream           |               |
+| [stream 流遍历 List分组Map](./src/main/java/com/javaniuniu/stream/MapGroupBy.java) | stream           |               |
+| [合并map](./src/main/java/com/javaniuniu/map/SumMap.java)    | stream ,   merge |               |
+| [StudentScoreTest](./src/main/java/com/javaniuniu/map/StudentScoreTest.java) | stream ,  merge  |               |
+| [Merge示例](./src/main/java/com/javaniuniu/map/MergeDemo.java) | merge            |               |
+| [GroupBy](./src/main/java/com/javaniuniu/stream/GroupBy.java) | stream , groupby |               |
+| [Java8合并两个Map中元素](./src/main/java/com/javaniuniu/map/MergeEmp.java) | stream           | 5中方法，很全 |
 
 
 

@@ -6,6 +6,7 @@ public class Employee {
     private Integer sales;
     private String name;
 
+
     public Employee() {
     }
 
@@ -14,6 +15,8 @@ public class Employee {
         this.sales = sales;
         this.name = name;
     }
+
+
 
     public String getCity() {
         return city;
@@ -39,6 +42,8 @@ public class Employee {
         this.name = name;
     }
 
+
+
     @Override
     public String toString() {
         return "Employee{" +
@@ -47,4 +52,5 @@ public class Employee {
                 ", name='" + name + '\'' +
                 '}';
     }
+
 }
