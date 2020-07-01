@@ -13,16 +13,17 @@
 
 ####  2、jdk1.8 新增方法
 
-|jdk1.8新增|链接|说明|
-|:--|:--|:--|
-|stream|[Collection.stream()](https://www.matools.com/file/manual/jdk_api_1.8_google/java/util/Collection.html) |在jdk1.8中，Collection接口类新增了`stream()`流方法，所有实现了 Collection 的类都可以使用（List,Set,Queue）|
-|forEach|[Iterable.forEach()](https://www.matools.com/file/manual/jdk_api_1.8_google/java/lang/Iterable.html#forEach-java.util.function.Consumer-) |同时 Collection 继承了 Iterable，所有 Collection 实现类 也可使用 forEach|
-|merge|[Map.merge()](https://www.matools.com/file/manual/jdk_api_1.8_google/java/util/Map.html#merge-K-V-java.util.function.BiFunction-) |merge(K key, V value,  BiFunction<? super V,? super V,? extends V> remappingFunction)|
-|forEach|[Map.forEach()](https://www.matools.com/file/manual/jdk_api_1.8_google/java/util/Map.html#forEach-java.util.function.BiConsumer-) |forEach(BiConsumer<? super K,? super V> action)|
+|jdk1.8新增|链接|说明|使用方式|
+|:--|:--|:--|---|
+|stream|[Collection.stream()](https://www.matools.com/file/manual/jdk_api_1.8_google/java/util/Collection.html) |在jdk1.8中，Collection接口类新增了`stream()`流方法，所有实现了 Collection 的类都可以使用（List,Set,Queue）||
+|forEach|[Iterable.forEach()](https://www.matools.com/file/manual/jdk_api_1.8_google/java/lang/Iterable.html#forEach-java.util.function.Consumer-) |同时 Collection 继承了 Iterable，所有 Collection 实现类 也可使用 forEach||
+|merge|[Map.merge()](https://www.matools.com/file/manual/jdk_api_1.8_google/java/util/Map.html#merge-K-V-java.util.function.BiFunction-) |merge(K key, V value,  BiFunction<? super V,? super V,? extends V> remappingFunction)||
+|forEach|[Map.forEach()](https://www.matools.com/file/manual/jdk_api_1.8_google/java/util/Map.html#forEach-java.util.function.BiConsumer-) |forEach(BiConsumer<? super K,? super V> action)||
+|parallelStream|[parallelStream](https://www.matools.com/file/manual/jdk_api_1.8_google/java/util/Collection.html#parallelStream--) |parallelStream 通过并行，即是通过__多线程__的方式提高运算效率，其底层使用__Fork/Join__框架实现，需要注意并发编程中存在的问题，使用方式和 stream 一样|如何正确使用:<br/>1.确保要执行的任务对线程<br/> 2.环境没有依赖任务消耗时间长 /数据量大到不用思考是否要用parallel<br/>3.结果没有顺序要求|
+|removeIf|[removeIf](https://www.matools.com/file/manual/jdk_api_1.8_google/java/util/Collection.html#removeIf-java.util.function.Predicate-) |默认实现使用__其iterator()遍历集合的所有元素__。 使用Iterator.remove()删除每个匹配元素。 如果集合的迭代器不支持删除，那么UnsupportedOperationException将被抛出第一个匹配元素。||
+|spliterator|[spliterator](https://www.matools.com/file/manual/jdk_api_1.8_google/java/util/Spliterators.html#emptySpliterator--) |Spliterator就是为了__并行__遍历元素而设计的一个迭代器，__可以和iterator顺序遍历迭代器一起看__||
 
 ​    
-
-
 
 #### 3、[关键字](./src/main/java/com/javaniuniu/keyword/)
 
@@ -37,7 +38,7 @@
 
 #### 4、示例
 
-##### 4.1 Map 相关示例
+##### 4、1 Map 相关示例
 
 | 示例链接                                                     | 使用方法         | 说明          |
 | ------------------------------------------------------------ | ---------------- | ------------- |
@@ -51,7 +52,20 @@
 
 
 
-##### 4.2 其他示例
+##### 4、2 List 相关示例
+
+| 示例链接                                                     | 使用方法                  | 说明 |
+| ------------------------------------------------------------ | ------------------------- | ---- |
+| [Iterator 遍历](./src/main/java/com/javaniuniu/list/ListIterator.java) | Iterator                  |      |
+| [查询list 中字段](./src/main/java/com/javaniuniu/list/ListSearch.java) | filter sorted map forEach |      |
+| [sort Comparator 排序](./src/main/java/com/javaniuniu/list/ListSort.java) | sort Comparator           |      |
+| [RemoveIf](./src/main/java/com/javaniuniu/list/RemoveIf.java) | RemoveIf                  |      |
+
+
+
+
+
+##### 4、3 其他示例
 
 [Map](./src/main/java/com/javaniuniu/map) 
 
