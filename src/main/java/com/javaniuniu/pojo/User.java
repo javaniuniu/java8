@@ -1,10 +1,21 @@
 package com.javaniuniu.pojo;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.experimental.Accessors;
+
+import javax.validation.constraints.NotNull;
+
 /**
  * @auther: javaniuniu
  * @date: 2020/7/1 12:04 PM
  */
+@Data
+@EqualsAndHashCode(callSuper = false)
+@Accessors(chain = true)
 public class User {
+
+    @NotNull(message = "用户ID不能为空")
     private int id;
     private String name;
     private int age;
@@ -17,38 +28,5 @@ public class User {
         this.id = id;
         this.name = name;
         this.age = age;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                '}';
     }
 }
